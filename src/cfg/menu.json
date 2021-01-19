@@ -1,0 +1,13 @@
+{
+  "text": "Projects",
+  "num": 8,
+  "icon": "nf nf-mdi-chart_gantt",
+  "items": [
+    {
+      "text": "Projects list",
+      "num": 1,
+      "icon": "nf nf-fa-list",
+      "link": "router"
+    }
+  ]
+}

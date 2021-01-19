@@ -1,0 +1,19 @@
+{
+  "name": "bbn/appui-project",
+  "description": "Development projects for Appui",
+  "keywords": ["projects","appui"],
+  "homepage": "https://github.com/nabab/appui-project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Nabet",
+      "email": "thomas.nabet@gmail.com",
+      "homepage": "https://bbn.solutions",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "bbn/bbn": "dev-master"
+  }
+}
