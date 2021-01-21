@@ -10,19 +10,19 @@ if (empty($ctrl->arguments) || ($ctrl->arguments[0] === 'list')) {
     );
   }
 
-  $ctrl->obj->url    = APPUI_PROJECTS_ROOT.'router/list';
+  $ctrl->obj->url    = APPUI_PROJECT_ROOT.'router/list';
   $ctrl->obj->bcolor = '#017a8a';
   $ctrl->obj->fcolor = '#FFF';
   $ctrl->obj->icon   = "nf nf-fa-cogs";
 
-  $ctrl->combo('PROJECTS' ,true);
+  $ctrl->combo(_('Projects') ,true);
 }
 elseif (!empty($ctrl->arguments)
     && ($ctrl->arguments[1] === 'ide')
 ) {
   $project = array_shift($ctrl->arguments);
   $ide     = array_shift($ctrl->arguments);
-  $bu      = APPUI_PROJECTS_ROOT.'router/'.$project.'/'.$ide.'/editor/';
+  $bu      = APPUI_PROJECT_ROOT.'router/'.$project.'/'.$ide.'/editor/';
   $ctrl->add_inc(
     'ide', new \bbn\appui\ide(
       $ctrl->db,
@@ -30,7 +30,7 @@ elseif (!empty($ctrl->arguments)
       $ctrl->get_routes(),
       $ctrl->inc->pref,
       $project,
-      'appui-projects'
+      'appui-project'
     )
   );
 

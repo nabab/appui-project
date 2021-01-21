@@ -126,11 +126,11 @@
                     "value": "{\"path\":\"bbn/appui-clipboard\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-components",
-                    "code": "appui-components",
+                    "text": "appui-component",
+                    "code": "appui-component",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-components\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-component\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
                     "text": "appui-config",
@@ -168,18 +168,18 @@
                     "value": "{\"path\":\"bbn/appui-dashboard\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-databases",
-                    "code": "appui-databases",
+                    "text": "appui-database",
+                    "code": "appui-database",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-databases\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-database\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-emails",
-                    "code": "appui-emails",
+                    "text": "appui-email",
+                    "code": "appui-email",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-emails\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-email\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
                     "text": "appui-entity",
@@ -280,32 +280,32 @@
                     "value": "{\"path\":\"bbn/appui-monitor\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-notes",
-                    "code": "appui-notes",
+                    "text": "appui-note",
+                    "code": "appui-note",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-notes\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-note\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-notifications",
-                    "code": "appui-notifications",
+                    "text": "appui-notification",
+                    "code": "appui-notification",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-notifications\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-notification\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-options",
-                    "code": "appui-options",
+                    "text": "appui-option",
+                    "code": "appui-option",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-options\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-option\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-projects",
-                    "code": "appui-projects",
+                    "text": "appui-project",
+                    "code": "appui-project",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-projects\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-project\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
                     "text": "appui-server",
@@ -336,11 +336,11 @@
                     "value": "{\"path\":\"bbn/appui-statistics\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
-                    "text": "appui-styles",
-                    "code": "appui-styles",
+                    "text": "appui-style",
+                    "code": "appui-style",
                     "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
                     "after": 1,
-                    "value": "{\"path\":\"bbn/appui-styles\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                    "value": "{\"path\":\"bbn/appui-style\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
                   },
                   {
                     "text": "appui-task",
@@ -446,12 +446,12 @@
       "projects",
       "appui-dashboard",
       "plugins",
-      "|*appui-projects*|/",
+      "|*appui-project*|/",
       "page",
       "permissions",
       "appui"
     ],
-    "value": "{\"limit\":5,\"observe\":false,\"options\":[],\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-projects-widget-projects\"}",
+    "value": "{\"limit\":5,\"observe\":false,\"options\":[],\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-project-widget-projects\"}",
     "after": 1
   }
 ]

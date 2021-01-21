@@ -5,7 +5,8 @@
     },
     methods:{
       getIDE(row){
-        let link = 'projects/router/'+row.project+'/ide/editor/';
+        let link = appui.plugins['appui-project'] + '/router/' + row.project
+            + '/' + appui.plugins['appui-ide'] + '/editor/';
         bbn.fn.log(row,link)
         bbn.fn.link(link, true);
       },
