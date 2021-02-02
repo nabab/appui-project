@@ -20,8 +20,8 @@ else{
   $ctrl->obj->fcolor = '#FFF';
   $ctrl->obj->icon = "nf nf-fa-code";
 
-  $data = $ctrl->get_model($ctrl->plugin_url('appui-ide').'/editor',[
-    'routes' => $ctrl->get_routes(),
+  $data = $ctrl->getModel($ctrl->pluginUrl('appui-ide').'/editor',[
+    'routes' => $ctrl->getRoutes(),
     'project' => $ctrl->arguments[0]
   ]);
 
@@ -29,9 +29,9 @@ else{
 
   $title ='I.D.E'. ' ('.$ctrl->arguments[0].')';
   echo $ctrl
-      ->set_title($title)
-      ->add_js($ctrl->obj)
-      ->get_view();
+      ->setTitle($title)
+      ->addJs($ctrl->obj)
+      ->getView();
 }
 
 

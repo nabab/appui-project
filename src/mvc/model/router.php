@@ -3,13 +3,13 @@ $list_projects = [];
 $num_path = [];
 $paths = ['app','cdn', 'lib'];
 if ( !empty($model->inc->options) ){
-  $projects =  $model->inc->options->full_options($model->inc->options->from_code('list', 'project', 'appui'));
+  $projects =  $model->inc->options->fullOptions($model->inc->options->fromCode('list', 'project', 'appui'));
   if ( !empty($projects) && count($projects) ){
     foreach ( $projects as $i => $project){
       if ( $project['code'] !== 'assets' ){
         $num = 0;
         foreach( $paths as $path ){
-  				$opt = $model->inc->options->option($model->inc->options->from_code($path, 'path', $project['id']));
+  				$opt = $model->inc->options->option($model->inc->options->fromCode($path, 'path', $project['id']));
           $num += $opt['num_children'];
           $num_path[$path] = !empty($opt['num_children']) ? $opt['num_children'] : 0;
   			}

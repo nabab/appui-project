@@ -1,6 +1,6 @@
 <appui-ide-editor 
                   :source="source"
-                  prefix="projects/editor"
+                  :prefix="source.root + '/editor'"
                   :project="source.project"
 ></appui-ide-editor>
  

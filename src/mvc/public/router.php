@@ -23,11 +23,11 @@ elseif (!empty($ctrl->arguments)
   $project = array_shift($ctrl->arguments);
   $ide     = array_shift($ctrl->arguments);
   $bu      = APPUI_PROJECT_ROOT.'router/'.$project.'/'.$ide.'/editor/';
-  $ctrl->add_inc(
-    'ide', new \bbn\appui\ide(
+  $ctrl->addInc(
+    'ide', new \bbn\Appui\Ide(
       $ctrl->db,
       $ctrl->inc->options,
-      $ctrl->get_routes(),
+      $ctrl->getRoutes(),
       $ctrl->inc->pref,
       $project,
       'appui-project'
@@ -37,7 +37,7 @@ elseif (!empty($ctrl->arguments)
   if (empty($ctrl->baseURL) && (count($ctrl->arguments) > 1)) {
     // for actions or history
     $ctrl->reroute(
-      $ctrl->plugin_url('appui-ide') . '/'
+      $ctrl->pluginUrl('appui-ide') . '/'
           . ($ctrl->arguments[0] === 'editor' ? 'editor' : implode('/', $ctrl->arguments)),
       $ctrl->post
     );
@@ -51,7 +51,7 @@ elseif (!empty($ctrl->arguments)
     }
 
     $ctrl->reroute(
-      $ctrl->plugin_url('appui-ide').'/'
+      $ctrl->pluginUrl('appui-ide').'/'
           .implode('/', $ctrl->arguments),
       $ctrl->post,
       $args
