@@ -3,7 +3,7 @@
              :source="source.data"
              class="bbn-w-100"
              :toolbar="$options.components.toolbar"
-             :order="[{field: 'project', Dir: 'ASC'}]"
+             :order="[{field: 'project', dir: 'ASC'}]"
   >
     <bbns-column title="<?=_("Project")?>"
                  field="project"

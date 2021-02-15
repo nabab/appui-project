@@ -1,457 +1,469 @@
-[
-  {
-    "text": "Projects",
-    "code": "projects",
-    "id_parent": "appui",
-    "icon": "nf nf-fa-sitemap",
-    "cfg": {
-      "show_code": 1,
-      "allow_children": 1,
-      "schema": [
-        {
-          "title": "Icon",
-          "field": "icon",
-          "type": "string",
-          "options": {},
-          "required": true,
-          "default": "nf nf-fa-server",
-          "hidden": false,
-          "editable": true,
-          "showable": true
-        }
-      ]
-    },
-    "items": [
+{
+  "text": "Projects",
+  "code": "projects",
+  "id_parent": "appui",
+  "icon": "nf nf-fa-sitemap",
+  "cfg": {
+    "show_code": 1,
+    "allow_children": 1,
+    "schema": [
       {
-        "text": "|*project*|",
-        "code": "|*project*|",
-        "value": "{\"icon\":\"nf nf-fa-server\"}",
-        "cfg": {
-          "show_code": 1,
-          "inheritance": "cascade",
-          "allow_children": 1
-        },
-        "items": [
-          {
-            "text": "Languages",
-            "code": "lang",
-            "items": [
-              {
-                "text": "English",
-                "code": "en"
-              },
-              {
-                "text": "French",
-                "code": "fr"
-              },
-              {
-                "text": "German",
-                "code": "de"
-              },
-              {
-                "text": "Italian",
-                "code": "it"
-              },
-              {
-                "text": "Spanish; Castilian",
-                "code": "es"
-              }
-            ]
-          },
-          {
-            "text": "Path",
-            "code": "path",
-            "value": "{\"icon\":\"nf nf-fa-code_fork\"}",
-            "items": [
-              {
-                "text": "app",
-                "code": "app",
-                "value": "{\"icon\":\"nf nf-mdi-server_minus\"}",
-                "items": [
-                  {
-                    "text": "main",
-                    "code": "main",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "value": "{\"path\":\"/\",\"bcolor\":\"#0c1b71\",\"fcolor\":\"#fdfdfd\",\"default\":true,\"language\":\"fr\"}",
-                    "after": 1
-                  }
-                ]
-              },
-              {
-                "text": "cdn",
-                "code": "cdn",
-                "value": "{\"icon\":\"nf nf-mdi-server_minus\"}",
-                "items": [
-
-                ]
-              },
-              {
-                "text": "lib",
-                "code": "lib",
-                "value": "{\"icon\":\"nf nf-mdi-server_minus\"}",
-                "items": [
-                  {
-                    "text": "appui-api",
-                    "code": "api",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-api\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-billing",
-                    "code": "appui-billing",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-billing\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-cdn",
-                    "code": "appui-cdn",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-cdn\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-chat",
-                    "code": "appui-chat",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-chat\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-clipboard",
-                    "code": "appui-clipboard",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-clipboard\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-component",
-                    "code": "appui-component",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-component\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-config",
-                    "code": "appui-config",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-config\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-core",
-                    "code": "appui-core",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-core\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-crm",
-                    "code": "appui-crm",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-crm\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-cron",
-                    "code": "appui-cron",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-cron\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-dashboard",
-                    "code": "appui-dashboard",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-dashboard\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-database",
-                    "code": "appui-database",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-database\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-email",
-                    "code": "appui-email",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-email\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-entity",
-                    "code": "appui-entity",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-entity\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-events",
-                    "code": "appui-events",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-events\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-explorer",
-                    "code": "appui-explorer",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-explorer\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-ext-tools",
-                    "code": "appui-ext-tools",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-ext-tools\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-finder",
-                    "code": "appui-finder",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-finder\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-gdpr",
-                    "code": "appui-gdpr",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-gdpr\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-history",
-                    "code": "appui-history",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-history\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-hr",
-                    "code": "appui-hr",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-hr\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-i18n",
-                    "code": "appui-i18n",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-i18n\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-ide",
-                    "code": "appui-ide",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-ide\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-mailing",
-                    "code": "appui-mailing",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-mailing\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-meeting",
-                    "code": "appui-meeting",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-meeting\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-menu",
-                    "code": "appui-menu",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-menu\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-monitor",
-                    "code": "appui-monitor",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-monitor\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-note",
-                    "code": "appui-note",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-note\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-notification",
-                    "code": "appui-notification",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-notification\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-option",
-                    "code": "appui-option",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-option\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-project",
-                    "code": "appui-project",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-project\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-server",
-                    "code": "appui-server",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-server\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-social",
-                    "code": "appui-social",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-social\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-spreadsheet",
-                    "code": "appui-spreadsheet",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-spreadsheet\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-statistics",
-                    "code": "appui-statistics",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-statistics\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-style",
-                    "code": "appui-style",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-style\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-task",
-                    "code": "appui-task",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-task\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-usergroup",
-                    "code": "appui-usergroup",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-usergroup\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "appui-write",
-                    "code": "appui-write",
-                    "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/appui-write\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  },
-                  {
-                    "text": "bbn",
-                    "code": "bbn",
-                    "id_alias": ["cls", "PTYPES", "ide", "appui"],
-                    "after": 1,
-                    "value": "{\"path\":\"bbn/bbn/src/bbn\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "text": "Environments",
-            "code": "env",
-            "value": "{\"icon\":\"nf nf-fa-envira\"}",
-            "cfg": {
-              "show_code": 1,
-              "show_alias": 1,
-              "show_icon": 1,
-              "allow_children": 1,
-              "alias_name": "Host",
-              "id_root_alias": ["servers","server","appui"],
-              "schema": [
-                {
-                  "title": "Path",
-                  "field": "text",
-                  "type": "string",
-                  "required": true,
-                  "editable": true,
-                  "showable": true
-                },
-                {
-                  "title": "URL",
-                  "field": "code",
-                  "type": "string",
-                  "options": {},
-                  "required": true,
-                  "hidden": false,
-                  "editable": true,
-                  "showable": true
-                },
-                {
-                  "title": "Environment type",
-                  "field": "type",
-                  "showable": true,
-                  "editable": true,
-                  "required": true,
-                  "type": "",
-                  "hidden": false,
-                  "source": [
-                    {
-                      "text": "Development",
-                      "value":"dev"
-                    },
-                    {
-                      "text": "Test",
-                      "value": "test"
-                    },
-                    {
-                      "text": "Production",
-                      "value": "prod"
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ]
+        "title": "Icon",
+        "field": "icon",
+        "type": "string",
+        "options": {},
+        "required": true,
+        "default": "nf nf-fa-server",
+        "hidden": false,
+        "editable": true,
+        "showable": true
       }
     ]
   },
-  {
-    "text": "Projects",
-    "code": "projects",
-    "id_parent": [
-      "default",
-      "dashboard",
-      "appui"
-    ],
-    "id_alias": [
-      "projects",
-      "appui-dashboard",
-      "plugins",
-      "|*appui-project*|/",
-      "page",
-      "permissions",
-      "appui"
-    ],
-    "value": "{\"limit\":5,\"observe\":false,\"options\":[],\"closable\":true,\"buttonsLeft\":[],\"buttonsRight\":[],\"itemComponent\":\"appui-project-widget-projects\"}",
-    "after": 1
-  }
-]
+  "items": [
+    {
+      "text": "|*project*|",
+      "code": "|*project*|",
+      "value": "{\"icon\":\"nf nf-fa-server\"}",
+      "cfg": {
+        "show_code": 1,
+        "inheritance": "cascade",
+        "allow_children": 1
+      },
+      "items": [
+        {
+          "text": "Languages",
+          "code": "lang",
+          "items": [
+            {
+              "text": "English",
+              "code": "en"
+            },
+            {
+              "text": "French",
+              "code": "fr"
+            },
+            {
+              "text": "German",
+              "code": "de"
+            },
+            {
+              "text": "Italian",
+              "code": "it"
+            },
+            {
+              "text": "Spanish; Castilian",
+              "code": "es"
+            }
+          ]
+        },
+        {
+          "text": "Path",
+          "code": "path",
+          "value": "{\"icon\":\"nf nf-fa-code_fork\"}",
+          "items": [
+            {
+              "text": "app",
+              "code": "app",
+              "value": "{\"icon\":\"nf nf-mdi-server_minus\"}",
+              "items": [
+                {
+                  "text": "main",
+                  "code": "main",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "value": "{\"path\":\"/\",\"bcolor\":\"#0c1b71\",\"fcolor\":\"#fdfdfd\",\"default\":true,\"language\":\"fr\"}",
+                  "after": 1
+                }
+              ]
+            },
+            {
+              "text": "cdn",
+              "code": "cdn",
+              "value": "{\"icon\":\"nf nf-mdi-server_minus\"}",
+              "items": [
+
+              ]
+            },
+            {
+              "text": "lib",
+              "code": "lib",
+              "value": "{\"icon\":\"nf nf-mdi-server_minus\"}",
+              "items": [
+                {
+                  "text": "appui-api",
+                  "code": "api",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-api\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-billing",
+                  "code": "appui-billing",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-billing\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-cdn",
+                  "code": "appui-cdn",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-cdn\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-chat",
+                  "code": "appui-chat",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-chat\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-clipboard",
+                  "code": "appui-clipboard",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-clipboard\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-component",
+                  "code": "appui-component",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-component\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-config",
+                  "code": "appui-config",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-config\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-core",
+                  "code": "appui-core",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-core\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-crm",
+                  "code": "appui-crm",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-crm\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-cron",
+                  "code": "appui-cron",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-cron\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-dashboard",
+                  "code": "appui-dashboard",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-dashboard\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-database",
+                  "code": "appui-database",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-database\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-email",
+                  "code": "appui-email",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-email\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-entity",
+                  "code": "appui-entity",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-entity\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-events",
+                  "code": "appui-events",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-events\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-explorer",
+                  "code": "appui-explorer",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-explorer\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-ext-tools",
+                  "code": "appui-ext-tools",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-ext-tools\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-finder",
+                  "code": "appui-finder",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-finder\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-gdpr",
+                  "code": "appui-gdpr",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-gdpr\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-history",
+                  "code": "appui-history",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-history\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-hr",
+                  "code": "appui-hr",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-hr\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-i18n",
+                  "code": "appui-i18n",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-i18n\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-ide",
+                  "code": "appui-ide",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-ide\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-mailing",
+                  "code": "appui-mailing",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-mailing\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-meeting",
+                  "code": "appui-meeting",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-meeting\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-menu",
+                  "code": "appui-menu",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-menu\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-monitor",
+                  "code": "appui-monitor",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-monitor\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-note",
+                  "code": "appui-note",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-note\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-notification",
+                  "code": "appui-notification",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-notification\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-option",
+                  "code": "appui-option",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-option\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-project",
+                  "code": "appui-project",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-project\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-server",
+                  "code": "appui-server",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-server\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-social",
+                  "code": "appui-social",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-social\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-spreadsheet",
+                  "code": "appui-spreadsheet",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-spreadsheet\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-statistics",
+                  "code": "appui-statistics",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-statistics\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-style",
+                  "code": "appui-style",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-style\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-task",
+                  "code": "appui-task",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-task\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-usergroup",
+                  "code": "appui-usergroup",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-usergroup\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "appui-write",
+                  "code": "appui-write",
+                  "id_alias": ["bbn-project", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/appui-write\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                },
+                {
+                  "text": "bbn",
+                  "code": "bbn",
+                  "id_alias": ["cls", "PTYPES", "ide", "appui"],
+                  "after": 1,
+                  "value": "{\"path\":\"bbn/bbn/src/bbn\",\"bcolor\":\"#261b78\",\"fcolor\":\"#ffffff\",\"language\":\"en\"}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Environments",
+          "code": "env",
+          "value": "{\"icon\":\"nf nf-fa-envira\"}",
+          "cfg": {
+            "show_code": 1,
+            "show_alias": 1,
+            "show_icon": 1,
+            "allow_children": 1,
+            "alias_name": "Host",
+            "id_root_alias": ["servers","server","appui"],
+            "schema": [
+              {
+                "title": "Path",
+                "field": "text",
+                "type": "string",
+                "required": true,
+                "editable": true,
+                "showable": true
+              },
+              {
+                "title": "URL",
+                "field": "code",
+                "type": "string",
+                "options": {},
+                "required": true,
+                "hidden": false,
+                "editable": true,
+                "showable": true
+              },
+              {
+                "title": "Environment type",
+                "field": "type",
+                "showable": true,
+                "editable": true,
+                "required": true,
+                "type": "",
+                "hidden": false,
+                "source": [
+                  {
+                    "text": "Development",
+                    "value":"dev"
+                  },
+                  {
+                    "text": "Test",
+                    "value": "test"
+                  },
+                  {
+                    "text": "Production",
+                    "value": "prod"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }, {
+      "text": "Permissions",
+      "code": "permissions",
+      "cfg": {
+        "allow_children": 1
+      },
+      "items": [
+        {
+          "text": "Access",
+          "code": "access"
+        }, {
+          "text": "Options",
+          "code": "options"
+        }, {
+          "text": "Plugins",
+          "code": "plugins",
+          "items": [
+            {
+              "text": "Dashboard",
+              "code": "appui-dashboard",
+              "id_alias": ["list", "dashboard", "appui"],
+              "items": [
+                {
+                  "text": "Projects",
+                  "code": "projects",
+                  "limit":5,
+                  "closable":true,
+                  "itemComponent": "appui-project-widget-projects"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
