@@ -1,4 +1,6 @@
 <?php
+use bbn\X;
+
 $list = [];
 if (empty($ctrl->arguments) || ($ctrl->arguments[0] === 'list')) {
     // We define ide array in session
@@ -17,14 +19,17 @@ if (empty($ctrl->arguments) || ($ctrl->arguments[0] === 'list')) {
 
   $ctrl->combo(_('Projects') ,true);
 }
-elseif (!empty($ctrl->arguments)
-    && ($ctrl->arguments[1] === 'ide')
+elseif ($ctrl->hasArguments(2)
+    && ($ide = $ctrl->pluginUrl('appui-ide'))
+    && (strpos(X::join(array_slice($ctrl->arguments, 1), '/'), $ide) === 0)
 ) {
-  $project = array_shift($ctrl->arguments);
-  $ide     = array_shift($ctrl->arguments);
-  $bu      = APPUI_PROJECT_ROOT.'router/'.$project.'/'.$ide.'/editor/';
+  $current = $ctrl->pluginUrl('appui-project');
+  $args    = $ctrl->arguments;
+  $project = array_shift($args);
+  // We remove the plugin from args
+  $args = X::split(substr(X::join($args, '/'), strlen($ide) + 1), '/');
   $ctrl->addInc(
-    'ide', new \bbn\Appui\Ide(
+    'ide', new bbn\Appui\Ide(
       $ctrl->db,
       $ctrl->inc->options,
       $ctrl->getRoutes(),
@@ -33,28 +38,25 @@ elseif (!empty($ctrl->arguments)
       'appui-project'
     )
   );
+  //die(var_dump(X::join($args, '/')));
 
-  if (empty($ctrl->baseURL) && (count($ctrl->arguments) > 1)) {
+
+  if (empty($ctrl->baseURL)) {
     // for actions or history
     $ctrl->reroute(
-      $ctrl->pluginUrl('appui-ide') . '/'
-          . ($ctrl->arguments[0] === 'editor' ? 'editor' : implode('/', $ctrl->arguments)),
-      $ctrl->post
+      $ctrl->pluginUrl('appui-ide').'/'.($args[0] === 'editor' ? 'editor' : implode('/', $args)),
+      $ctrl->post,
+      $args[0] === 'editor' ? array_slice($args, 1) : []
     );
   }
   else{
-    $args = $ctrl->arguments;
-    array_shift($args);
-    array_shift($args);
-    if (end($ctrl->arguments) === 'content') {
-      array_unshift($ctrl->arguments, 'editor');
+    if (end($args) === 'content') {
+      //array_unshift($args, 'editor');
     }
 
     $ctrl->reroute(
-      $ctrl->pluginUrl('appui-ide').'/'
-          .implode('/', $ctrl->arguments),
-      $ctrl->post,
-      $args
+      $ctrl->pluginUrl('appui-ide').'/'.X::join($args, '/'),
+      $ctrl->post
     );
   }
 }
