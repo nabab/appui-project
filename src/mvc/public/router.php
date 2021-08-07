@@ -44,7 +44,7 @@ elseif ($ctrl->hasArguments(2)
   if (empty($ctrl->baseURL)) {
     // for actions or history
     $ctrl->reroute(
-      $ctrl->pluginUrl('appui-ide').'/'.($args[0] === 'editor' ? 'editor' : implode('/', $args)),
+      $ide.'/'.($args[0] === 'editor' ? 'editor' : implode('/', $args)),
       $ctrl->post,
       $args[0] === 'editor' ? array_slice($args, 1) : []
     );
