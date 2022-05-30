@@ -14,7 +14,7 @@ $grid = new \bbn\Appui\Grid($model->db, $model->data, [
   'filters' => [
     'conditions' => [[
       'field' => $opt_cfg['arch']['options']['id_parent'],
-      'value' => $model->inc->options->fromCode('project', 'appui')
+      'value' => $model->inc->options->fromCode('list', 'project', 'appui')
     ]]
   ],
   'order' => [[
