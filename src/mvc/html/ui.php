@@ -1,0 +1,1 @@
+<appui-newide-editor :source="source"></appui-newide-editor>
