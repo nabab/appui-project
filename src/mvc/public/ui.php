@@ -9,7 +9,7 @@ $id_project = $ctrl->hasArguments() ? $ctrl->arguments[0] : $ctrl->inc->options-
 
 // the request is coming straight from the root router, showing the whole UI
 if (empty($ctrl->baseURL)) {
-	$ctrl->setUrl("project/$id_project")
+	$ctrl->setUrl("project/ui/$id_project")
     ->combo("Project IDE", true);
 }
 // from internal router
@@ -22,12 +22,11 @@ elseif ($ctrl->hasArguments()) {
   }
   switch ($page) {
     case "ide":
-      $ctrl->addToObj("newide/editor", [
+      $ctrl->addToObj("newide/editor".($ctrl->hasArguments() ? '/'.X::join($ctrl->arguments, '/') : ''), [
         "arguments" => $ctrl->arguments,
         "id_project" => $id_project
-      ], true);
-      //$ctrl->setUrl("project_ide/$id_project/ide".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
-      //$ctrl->setTitle(_("IDE"));
+      ]);
+      $ctrl->setUrl("project/ui/$id_project/".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
       break;
     case "database":
       $database = $ctrl->inc->options->fromCode("db", $id_project);
