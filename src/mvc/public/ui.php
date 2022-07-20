@@ -9,7 +9,7 @@ $id_project = $ctrl->hasArguments() ? $ctrl->arguments[0] : $ctrl->inc->options-
 
 // the request is coming straight from the root router, showing the whole UI
 if (empty($ctrl->baseURL)) {
-	$ctrl->setUrl("project/ui/$id_project")
+  $ctrl->setUrl("project/ui/$id_project")
     ->combo("Project IDE", true);
 }
 // from internal router
@@ -20,13 +20,25 @@ elseif ($ctrl->hasArguments()) {
   if ($page === $id_project) {
     $page = array_shift($ctrl->arguments);
   }
+  $url = $ctrl->pluginUrl('appui-project')."/ui/$id_project";
   switch ($page) {
     case "ide":
-      $ctrl->addToObj("newide/editor".($ctrl->hasArguments() ? '/'.X::join($ctrl->arguments, '/') : ''), [
+      $url.='/ide';
+      $full_url = $ctrl->hasArguments() ? '/'.X::join($ctrl->arguments, '/') : '';
+			$hasFile = false;
+      if ($ctrl->arguments[0] === 'file') {
+        $hasFile = true;
+        array_shift($ctrl->arguments);
+      }
+      $ctrl->addToObj("newide/editor".$full_url, [
         "arguments" => $ctrl->arguments,
-        "id_project" => $id_project
+        "id_project" => $id_project,
+        "url" => X::join($ctrl->arguments, '/'),
+        "baseURL" => $ctrl->baseURL
       ]);
-      $ctrl->setUrl("project/ui/$id_project/".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
+      if ($ctrl->obj->url) {
+        $ctrl->setUrl($url.'/'.($hasFile ? 'file/' : '').$ctrl->obj->url);
+      }
       break;
     case "database":
       $database = $ctrl->inc->options->fromCode("db", $id_project);
