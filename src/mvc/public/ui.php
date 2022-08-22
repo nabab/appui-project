@@ -25,7 +25,7 @@ elseif ($ctrl->hasArguments()) {
     case "ide":
       $url.='/ide';
       $full_url = $ctrl->hasArguments() ? '/'.X::join($ctrl->arguments, '/') : '';
-			$hasFile = false;
+            $hasFile = false;
       if ($ctrl->arguments[0] === 'file') {
         $hasFile = true;
         array_shift($ctrl->arguments);

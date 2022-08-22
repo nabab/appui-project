@@ -15,6 +15,7 @@ if ( !empty($model->inc->options) ){
   			}
         $list_projects[] = array_merge([
           'project' => $project['code'],
+          'id' => $project['id'],
           'repositories' => $num
         ], $num_path);
       } 
