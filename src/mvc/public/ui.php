@@ -8,7 +8,7 @@ use bbn\Str;
 $id_project = $ctrl->hasArguments() ? $ctrl->arguments[0] : $ctrl->inc->options->fromCode(BBN_APP_NAME, "list", "project", "appui");
 
 // the request is coming straight from the root router, showing the whole UI
-if (empty($ctrl->baseURL)) {
+if (empty(BBN_BASEURL)) {
   $ctrl->setUrl("project/ui/$id_project")
     ->combo("Project IDE", true);
 }
@@ -34,7 +34,7 @@ elseif ($ctrl->hasArguments()) {
         "arguments" => $ctrl->arguments,
         "id_project" => $id_project,
         "url" => X::join($ctrl->arguments, '/'),
-        "baseURL" => $ctrl->baseURL
+        "baseURL" => BBN_BASEURL
       ]);
       if ($ctrl->obj->url) {
         $ctrl->setUrl($url.'/'.($hasFile ? 'file/' : '').$ctrl->obj->url);

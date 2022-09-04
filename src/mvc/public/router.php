@@ -41,7 +41,7 @@ elseif ($ctrl->hasArguments(2)
   //die(var_dump(X::join($args, '/')));
 
 
-  if (empty($ctrl->baseURL)) {
+  if (empty(BBN_BASEURL)) {
     // for actions or history
     $ctrl->reroute(
       $ide.'/'.($args[0] === 'editor' ? 'editor' : implode('/', $args)),
