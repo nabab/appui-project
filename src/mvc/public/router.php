@@ -41,15 +41,7 @@ elseif ($ctrl->hasArguments(2)
   //die(var_dump(X::join($args, '/')));
 
 
-  if (empty(BBN_BASEURL)) {
-    // for actions or history
-    $ctrl->reroute(
-      $ide.'/'.($args[0] === 'editor' ? 'editor' : implode('/', $args)),
-      $ctrl->post,
-      $args[0] === 'editor' ? array_slice($args, 1) : []
-    );
-  }
-  else{
+  if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
     if (end($args) === 'content') {
       //array_unshift($args, 'editor');
     }
@@ -57,6 +49,14 @@ elseif ($ctrl->hasArguments(2)
     $ctrl->reroute(
       $ctrl->pluginUrl('appui-ide').'/'.X::join($args, '/'),
       $ctrl->post
+    );
+  }
+  else{
+    // for actions or history
+    $ctrl->reroute(
+      $ide.'/'.($args[0] === 'editor' ? 'editor' : implode('/', $args)),
+      $ctrl->post,
+      $args[0] === 'editor' ? array_slice($args, 1) : []
     );
   }
 }

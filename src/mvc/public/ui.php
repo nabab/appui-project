@@ -7,13 +7,8 @@ use bbn\Str;
 /** @todo temporary hard coded $id_project */
 $id_project = $ctrl->hasArguments() ? $ctrl->arguments[0] : $ctrl->inc->options->fromCode(BBN_APP_NAME, "list", "project", "appui");
 
-// the request is coming straight from the root router, showing the whole UI
-if (empty(BBN_BASEURL)) {
-  $ctrl->setUrl("project/ui/$id_project")
-    ->combo("Project IDE", true);
-}
-// from internal router
-elseif ($ctrl->hasArguments()) {
+// the request is coming straight from the internal router
+if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
   //array_unshift($ctrl->arguments, $id_project);
   /** @var string ide/database/finder */
   $page = array_shift($ctrl->arguments);
@@ -57,4 +52,9 @@ elseif ($ctrl->hasArguments()) {
       $ctrl->setTitle(_("Finder"));
       break;
   }
+}
+// from the root router, showing the whole UI
+elseif ($ctrl->hasArguments()) {
+  $ctrl->setUrl("project/ui/$id_project")
+    ->combo("Project IDE", true);
 }
