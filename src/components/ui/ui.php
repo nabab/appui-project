@@ -1,8 +1,13 @@
 <!-- HTML Document -->
 
 <div class="bbn-overlay bbn-flex-width project_ide">
-  <div class="bbn-padded bbn-h-100 bbn-xxl bbn-bg-black bbn-white">
+  <div class="bbn-padded bbn-h-100 bbn-xxl bbn-bordered-right">
     <div class="project_ide-navbar">
+      <div class="bbn-top-sspace bbn-p bbn-reactive-text"
+           tabindex="0"
+           @click="route('home')">
+        <i class="nf nf-fa-home"/>
+      </div>
       <div class="bbn-top-sspace bbn-p"
            tabindex="0"
            @click="route('ide')">
