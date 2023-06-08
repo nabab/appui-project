@@ -5,7 +5,20 @@ use bbn\Str;
 /** @var $ctrl \bbn\Mvc\Controller */
 
 /** @todo temporary hard coded $id_project */
-$id_project = $ctrl->hasArguments() ? $ctrl->arguments[0] : $ctrl->inc->options->fromCode(BBN_APP_NAME, "list", "project", "appui");
+if (!$ctrl->hasArguments()) {
+  if (!defined('BBN_PROJECT')) {
+    throw new Exception(_("Impossible to find the ID project"));
+  }
+  $id_project = BBN_PROJECT;
+}
+else {
+  if (!Str::isUid($ctrl->arguments[0])) {
+    $id_project = $ctrl->inc->options->fromCode(BBN_APP_NAME, "list", "project", "appui");
+  }
+  else {
+    $id_project = $ctrl->arguments[0];
+  }
+}
 
 // the request is coming straight from the internal router
 if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
@@ -56,5 +69,6 @@ if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
 // from the root router, showing the whole UI
 elseif ($ctrl->hasArguments()) {
   $ctrl->setUrl("project/ui/$id_project")
+    ->addData(['id_project' => $id_project])
     ->combo("Project IDE", true);
 }
