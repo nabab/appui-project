@@ -51,24 +51,16 @@
       }
     }
   }];
-  bbn.vue.addPrefix("luk-project2-", (tag, resolve, reject) => {
-    return bbn.vue.queueComponent(
-      tag,
-      'component/project2/' + bbn.fn.replaceAll('-', '/', tag),
-      mixins,
-      resolve,
-      reject
-    );
-  });
   return {
     data() {
       return {
+        ide_root: appui.plugins['appui-ide'] + '/',
         /**
   				* Path to the root of the project
   				*
   				* @data {String} ['project_ide/' + this.source.id_project + "/"] root
   				*/
-        root: 'project_ide/' + this.source.id_project + "/"
+        root: appui.plugins['appui-ide'] + '/project_ide/' + this.source.id_project + "/"
       };
     },
     methods: {

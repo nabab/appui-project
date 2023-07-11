@@ -38,7 +38,7 @@ if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
         $hasFile = true;
         array_shift($ctrl->arguments);
       }
-      $ctrl->addToObj("newide/editor".$full_url, [
+      $ctrl->addToObj($ctrl->pluginUrl('appui-ide') . "/editor".$full_url, [
         "arguments" => $ctrl->arguments,
         "id_project" => $id_project,
         "url" => X::join($ctrl->arguments, '/'),
@@ -68,7 +68,7 @@ if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
 }
 // from the root router, showing the whole UI
 elseif ($ctrl->hasArguments()) {
-  $ctrl->setUrl("project/ui/$id_project")
+  $ctrl->setUrl($ctrl->pluginUrl('appui-project') . "/ui/$id_project")
     ->addData(['id_project' => $id_project])
     ->combo("Project IDE", true);
 }
