@@ -9,7 +9,7 @@
           text: "IDE v1",
           action: row => {
             let link = appui.plugins['appui-project'] + '/router/' + row.project
-                + '/' + appui.plugins['appui-ide'] + '/editor/';
+                + '/' + appui.plugins['appui-newide'] + '/editor/';
             bbn.fn.log(row.link)
             bbn.fn.link(link, true);
           },

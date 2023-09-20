@@ -31,14 +31,14 @@
                   :root="ide_root + source.project.id"
                   ref="router">
         <bbn-container url="ide"
-                       component="appui-ide-editor"
+                       component="appui-newide-editor"
                        :source="source">
         </bbn-container>
         <bbn-container url="database"
                        component="appui-database-dashboard">
         </bbn-container>
         <bbn-container url="finder"
-                       component="appui-ide-finder">
+                       component="appui-newide-finder">
         </bbn-container>
       </bbn-router>
     </div>

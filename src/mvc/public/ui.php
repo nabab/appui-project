@@ -38,7 +38,7 @@ if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
         $hasFile = true;
         array_shift($ctrl->arguments);
       }
-      $ctrl->addToObj($ctrl->pluginUrl('appui-ide') . "/editor".$full_url, [
+      $ctrl->addToObj($ctrl->pluginUrl('appui-newide') . "/editor".$full_url, [
         "arguments" => $ctrl->arguments,
         "id_project" => $id_project,
         "url" => X::join($ctrl->arguments, '/'),
@@ -60,7 +60,7 @@ if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
       $ctrl->setTitle(_("Databases"));
       break;
     case "finder":
-      $ctrl->addToObj($ctrl->pluginUrl("appui-ide")."/finder".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
+      $ctrl->addToObj($ctrl->pluginUrl("appui-newide")."/finder".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
       $ctrl->setUrl("project_ide/$id_project/finder".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
       $ctrl->setTitle(_("Finder"));
       break;
