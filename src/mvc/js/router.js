@@ -9,9 +9,8 @@
           text: "IDE v1",
           action: row => {
             let link = appui.plugins['appui-project'] + '/router/' + row.project
-                + '/' + appui.plugins['appui-newide'] + '/editor/';
-            bbn.fn.log(row.link)
-            bbn.fn.link(link, true);
+                + '/' + appui.plugins['appui-ide'] + '/editor/';
+            bbn.fn.link(link);
           },
           icon: 'nf nf-fa-code',
           title: bbn._('Go to I.D.E v1') + ' ('+row.project+')',
@@ -19,8 +18,9 @@
         }, {
           text: "IDE v2",
           action: row => {
-            let link = appui.plugins['appui-project'] + '/ui/' + row.id + '/ide/';
-            bbn.fn.link(link, true);
+            let link = appui.plugins['appui-project'] + '/ui/' + row.id;
+            bbn.fn.log("LINK IS " + link)
+            bbn.fn.link(link, this);
           },
           class: 'bbn-primary',
           icon: 'nf nf-fa-code',

@@ -28,17 +28,17 @@
   <div class="bbn-flex-fill bbn-h-100">
     <div class="bbn-overlay">
       <bbn-router :autoload="false"
-                  :root="ide_root + source.project.id"
+                  :root="root + source.project.id"
                   ref="router">
         <bbn-container url="ide"
-                       component="appui-newide-editor"
+                       component="appui-ide-editor"
                        :source="source">
         </bbn-container>
         <bbn-container url="database"
                        component="appui-database-dashboard">
         </bbn-container>
         <bbn-container url="finder"
-                       component="appui-newide-finder">
+                       component="appui-ide-finder">
         </bbn-container>
       </bbn-router>
     </div>

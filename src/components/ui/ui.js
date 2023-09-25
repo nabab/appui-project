@@ -22,6 +22,8 @@
     },
     data() {
       return {
+        root: appui.plugins['appui-project'] + '/',
+
         /**
   				* Child component of luk-project2
   				*
@@ -44,23 +46,16 @@
     /**
   		* @event created
   		*/
-    created() {
-      let cp = this.closest("luk-project2");
-      if (cp) {
-        this.projectComponent = cp;
-      }
-    }
   }];
   return {
     data() {
       return {
-        ide_root: appui.plugins['appui-newide'] + '/',
         /**
   				* Path to the root of the project
   				*
   				* @data {String} ['project_ide/' + this.source.id_project + "/"] root
   				*/
-        root: appui.plugins['appui-newide'] + '/project_ide/' + this.source.id_project + "/"
+        root: appui.plugins['appui-ide'] + '/project_ide/' + this.source.id_project + "/"
       };
     },
     methods: {

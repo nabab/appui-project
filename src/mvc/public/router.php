@@ -47,7 +47,7 @@ elseif ($ctrl->hasArguments(2)
     }
 
     $ctrl->reroute(
-      $ctrl->pluginUrl('appui-newide').'/'.X::join($args, '/'),
+      $ctrl->pluginUrl('appui-ide').'/'.X::join($args, '/'),
       $ctrl->post
     );
   }
