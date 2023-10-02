@@ -3,23 +3,28 @@ namespace appui;
 
 use Exception;
 use bbn\X;
+use bbn\Str;
 use bbn\Mvc;
 use bbn\Db;
-use bbn\Models\Cls\Db as modelDb;
+use bbn\Models\Cls\Basic;
 use bbn\Models\Tts\Optional;
+use bbn\Models\Tts\Cache;
 use bbn\Appui\Url;
 use bbn\File\System;
+use bbn\File\Dir;
 use bbn\User\Preferences;
+use bbn\Appui\Option;
 
-class Project extends modelDb {
+class Project extends Basic {
 
   use Optional;
+  use Cache;
 
-  public $id;
   public $fs;
   private static $excluded = [
     'public' => ['_ctrl.php']
   ];
+  private $fullTree;
   protected $projectInfo;
   protected $pathInfo;
 
@@ -29,11 +34,13 @@ class Project extends modelDb {
    * @param Db $db
    * @param string $id
    */
-  public function __construct(Db $db, string $id)
+  public function __construct(
+    public Db $db,
+    public readonly string $id
+  )
   {
-    parent::__construct($db);
     self::optionalInit();
-    $this->id = $id;
+    self::cacheInit();
     $this->fs = new System();
   }
 
@@ -211,8 +218,8 @@ class Project extends modelDb {
       $res = $rep . '/';
       $bits = explode('/', substr($file, \strlen($root)));
       $filename  = array_pop($bits);
-      $extension = \bbn\Str::fileExt($filename);
-      $basename  = \bbn\Str::fileExt($filename, 1)[0];
+      $extension = Str::fileExt($filename);
+      $basename  = Str::fileExt($filename, 1)[0];
       // MVC or Component
       if (!empty($d['tabs'])) {
         // URL is interverted
@@ -249,7 +256,7 @@ class Project extends modelDb {
       else {
         $res .= implode('/', $bits) . '/' . $basename . '.' . $extension;
       }
-      return \bbn\Str::parsePath($res);
+      return Str::parsePath($res);
     }
     return false;
   }
@@ -259,15 +266,34 @@ class Project extends modelDb {
    *
    * @return array
    */
-  public function getFullTree(): array
+  public function getFullTree(bool $force = false): array
   {
+    if (!$force && $this->fullTree) {
+      return $this->fullTree;
+    }
+
     $res = self::getOptionsObject()->fullTree($this->id);
     foreach($res['items'] as $t) {
       $res[$t['code']] = $t;
     }
     unset($res['items']);
+    $this->fullTree = $res;
     return $res;
   }
+
+  public function getDbs(): array
+  {
+    $res = $this->getFullTree()['db'];
+    $o = self::getOptionsObject();
+    foreach ($res['db']['items'] as $i => $db) {
+      foreach ($db['items'] as $j => $conn) {
+        $res['db']['items'][$i]['items'][$j]['engine'] = $o->code($o->getIdParent($conn['alias']['id_parent']));
+      }
+    }
+
+    return $res;
+  }
+
 
   /**
    * function to get all path of the project and format each path
@@ -342,10 +368,14 @@ class Project extends modelDb {
   public function getProjectInfo(bool $force = false): array
   {
     if ($force || !$this->projectInfo) {
+      $info = [];
       $info = $this->getFullTree();
       $info['path'] = $this->getPaths();
+      $info['db'] = $this->getDbs();
+    
       $this->projectInfo = $info;
     }
+
     return $this->projectInfo;
   }
 
@@ -542,8 +572,8 @@ class Project extends modelDb {
         $todo,
         function($a) use (&$files) {
           // get name and extension of each files
-          $ext  = \bbn\Str::fileExt($a['name']);
-          $name = \bbn\Str::fileExt($a['name'], 1)[0];
+          $ext  = Str::fileExt($a['name']);
+          $name = Str::fileExt($a['name'], 1)[0];
           if (!isset($files[$name])) {
             $files[$name] = true;
             return true;
@@ -596,7 +626,7 @@ class Project extends modelDb {
           foreach($cnt as $f){
             $item = explode(".", basename($f))[0];
             if ($item === basename($t)) {
-              $arr[]  = \bbn\Str::fileExt($f);
+              $arr[]  = Str::fileExt($f);
               $is_vue = true;
             }
           }
@@ -625,7 +655,7 @@ class Project extends modelDb {
             //if is folder and component
             if ($item === basename($t)) {
               $folder    = false;
-              $arr[]     = \bbn\Str::fileExt($f);
+              $arr[]     = Str::fileExt($f);
               $is_vue    = true;
               $component = true;
               if (!empty($ext) && (in_array($ext, $excludeds) === false)) {
@@ -698,7 +728,7 @@ class Project extends modelDb {
       /** @todo check that it is working for directories */
       // uid of the file depends to his type
       'uid' => $component === true ? $cfg['publicPath'].$name.'/'.$name : $cfg['publicPath'].$name,
-      'has_index' => !$t['file'] && \bbn\File\Dir::hasFile($t['name'], 'index.php', 'index.html', 'index.htm'),
+      'has_index' => !$t['file'] && Dir::hasFile($t['name'], 'index.php', 'index.html', 'index.htm'),
       'is_svg' => $t['file'] && ($t['ext'] === 'svg'),
       // $is_vue not use
       'is_vue' => $is_vue,

@@ -5,58 +5,83 @@ use bbn\Str;
 /** @var $ctrl \bbn\Mvc\Controller */
 
 /** @todo temporary hard coded $id_project */
-if (!$ctrl->hasArguments()) {
+/** @var array */
+$args = $ctrl->arguments;
+if (count($args)) {
   if (!defined('BBN_PROJECT')) {
     throw new Exception(_("Impossible to find the ID project"));
   }
-  $id_project = BBN_PROJECT;
+
+  $id_project = constant('BBN_PROJECT');
+  $args[] = 'home';
 }
 else {
-  if (!Str::isUid($ctrl->arguments[0])) {
-    $id_project = $ctrl->inc->options->fromCode(BBN_APP_NAME, "list", "project", "appui");
-  }
-  else {
-    $id_project = $ctrl->arguments[0];
-  }
+  $id_project = Str::isUid($args[0]) ? 
+      array_shift($args)
+      : $ctrl->inc->options->fromCode(array_shift($args), "list", "project", "appui");
 }
 
 // the request is coming straight from the internal router
-if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
+if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
   //array_unshift($ctrl->arguments, $id_project);
   /** @var string ide/database/finder */
-  $page = array_shift($ctrl->arguments);
+  $page = array_shift($args);
   if ($page === $id_project) {
-    $page = array_shift($ctrl->arguments);
+    $page = array_shift($args);
   }
-  $url = $ctrl->pluginUrl('appui-project')."/ui/$id_project";
+
+  $full_url = count($args) ? '/'.X::join($args, '/') : '';
+  $url      = $ctrl->pluginUrl('appui-project')."/ui/$id_project";
   switch ($page) {
     case "ide":
       $url.='/ide';
-      $full_url = $ctrl->hasArguments() ? '/'.X::join($ctrl->arguments, '/') : '';
-            $hasFile = false;
-      if ($ctrl->arguments[0] === 'file') {
+      $hasFile = false;
+      if ($args[0] === 'file') {
         $hasFile = true;
-        array_shift($ctrl->arguments);
+        array_shift($args);
       }
+
       $ctrl->addToObj($ctrl->pluginUrl('appui-ide') . "/editor" . $full_url, [
-        "arguments" => $ctrl->arguments,
+        "arguments" => $args,
         "id_project" => $id_project,
-        "url" => X::join($ctrl->arguments, '/'),
-        "baseURL" => BBN_BASEURL
+        "url" => X::join($args, '/'),
+        "baseURL" => constant('BBN_BASEURL')
       ]);
       if ($ctrl->obj->url) {
         $ctrl->setUrl($url.'/'.($hasFile ? 'file/' : '').$ctrl->obj->url);
       }
       break;
+
     case "database":
-      $database = $ctrl->inc->options->fromCode("db", $id_project);
-      $databases = $ctrl->inc->options->fullOptions($database);
-      $ctrl->addToObj("project_ide/db", [
-        "arguments" => $ctrl->arguments,
-        "id_project" => $id_project,
-        "databases" => $databases
-      ], true);
-      $ctrl->setUrl("project_ide/$id_project/database".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
+      $url .= '/database';
+      /*
+      if (count($args) > 2) {
+        if (!($row = X::getRow($databases, ['code' => $args[2]]))) {
+          $ctrl->obj->error = _("The database does not exist");
+        }
+        elseif (!X::getRow($row['items'], ['code' => $args[1]])) {
+          $ctrl->obj->error = _("The connection does not exist");
+        }
+        else {
+          $ctrl->addToObj($ctrl->pluginUrl('appui-ide') . "/editor" . $full_url, [
+            "engine" => $args[0],
+            "host" => $args[1],
+            "db" => $args[2],
+            "baseURL" => constant('BBN_BASEURL')
+          ]);
+    
+        }
+      }
+      else {
+        $ctrl->addToObj('./ui/db', [
+          "arguments" => $ctrl->arguments,
+          "id_project" => $id_project,
+          "databases" => $databases
+        ], true);
+      }
+      $ctrl->setUrl("$url/database".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
+      */
+      $ctrl->setUrl("$url/database");
       $ctrl->setTitle(_("Databases"));
       break;
     case "finder":
@@ -64,6 +89,13 @@ if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
       $ctrl->setUrl("project_ide/$id_project/finder".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
       $ctrl->setTitle(_("Finder"));
       break;
+    case 'home':
+      $ctrl->addToObj($ctrl->pluginUrl("appui-project")."/ui/home", ['id_project' => $id_project], true)
+        ->setUrl("project_ide/$id_project/home")
+        ->setTitle(_("Home"))
+        ->setIcon('nf nf-fa-home');
+      break;
+
   }
 }
 // from the root router, showing the whole UI

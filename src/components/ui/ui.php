@@ -1,45 +1,58 @@
 <!-- HTML Document -->
 
-<div class="bbn-overlay bbn-flex-width project_ide">
+<div class="appui-project-ui bbn-overlay bbn-flex-width">
   <div class="bbn-padded bbn-h-100 bbn-xxl bbn-bordered-right">
     <div class="project_ide-navbar">
-      <div class="bbn-top-sspace bbn-p bbn-reactive-text"
+      <div bbn-for="(m, i) in menu"
+           class="bbn-top-sspace bbn-p">
+        <a :href="root + m.url"
            tabindex="0"
-           @click="route('home')">
-        <i class="nf nf-fa-home"/>
-      </div>
-      <div class="bbn-top-sspace bbn-p"
-           tabindex="0"
-           @click="route('ide')">
-        <i class="nf nf-fa-code"/>
-      </div>
-      <div class="bbn-top-sspace bbn-p"
-           tabindex="0"
-           @click="route('database')">
-        <i class="nf nf-fa-database bbn-top-space"/>
-      </div>
-      <div class="bbn-top-sspace bbn-p"
-           tabindex="0"
-           @click="route('finder')">
-        <i class="nf nf-mdi-apple_finder bbn-top-sspace"/>
+           :title="m.title">
+          <i :class="[m.icon, 'bbn-reactive-text', {'bbn-text': i === pageSelected}]"/>
+        </a>
       </div>
     </div>
   </div>
   <div class="bbn-flex-fill bbn-h-100">
     <div class="bbn-overlay">
       <bbn-router :autoload="false"
-                  :root="root + source.project.id"
+                  :root="root"
+                  @route="onRoute"
+                  def="home"
                   ref="router">
+        <bbn-container url="home"
+                       :load="true"/>
         <bbn-container url="ide"
                        component="appui-ide-editor"
-                       :source="source">
-        </bbn-container>
+                       :source="source"/>
         <bbn-container url="database"
-                       component="appui-database-dashboard">
+                       :scrollable="false">
+          <div class="bbn-overlay bbn-flex-height">
+            <bbn-toolbar>
+              <div>
+                <bbn-dropdown :source="source.project.db.items"
+                              v-model="databaseDb"
+                              source-value="code"
+                              :placeholder="_('Select a database')"/>
+                &nbsp;
+                <bbn-dropdown bbn-if="databaseDb"
+                              bbn-model="databaseHost"
+                              :source="connections"
+                              source-value="alias.code"
+                              source-value="alias.text"
+                              :placeholder="_('Select a host')"/>
+              </div>
+            </bbn-toolbar>
+            <div class="bbn-flex-fill">
+              <bbn-router :autoload="true"
+                          ref="dbRouter"
+                          :nav="false">
+            </div>
+
+          </div>
         </bbn-container>
         <bbn-container url="finder"
-                       component="appui-ide-finder">
-        </bbn-container>
+                       component="appui-ide-finder"/>
       </bbn-router>
     </div>
   </div>
