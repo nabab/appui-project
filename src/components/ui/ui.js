@@ -20,6 +20,8 @@
     },
     data() {
       const root = appui.plugins['appui-project'] + '/ui/' + this.source.project.id + "/"
+      const core = appui.plugins['appui-core'] + '/';
+
       const path = bbn.env.path.substr(root.length);
       const bits = path.split('/');
       const page = bits[0] || '';
@@ -64,6 +66,7 @@
       return {
         /** @data {String} ['project_ide/' + this.source.id_project + "/"] root Path to the root of the project */
         root,
+        core,
         menu,
         pageSelected,
         databaseDb,
@@ -75,7 +78,12 @@
         if (this.databaseDb) {
           const db = bbn.fn.getRow(this.source.project.db.items, {code: this.databaseDb});
           if (db) {
-            return db.items;
+            return db.items.map(a => {
+              return {
+                text: a.alias.text,
+                value: a.alias.code
+              }
+            });
           }
         }
 

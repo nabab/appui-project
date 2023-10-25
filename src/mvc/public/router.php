@@ -13,7 +13,7 @@ if (empty($ctrl->arguments) || ($ctrl->arguments[0] === 'list')) {
   }
 
   $ctrl->obj->url    = APPUI_PROJECT_ROOT.'router/list';
-  $ctrl->obj->bcolor = '#017a8a';
+  $ctrl->obj->bcolor = 'teal';
   $ctrl->obj->fcolor = '#FFF';
   $ctrl->obj->icon   = "nf nf-fa-cogs";
 

@@ -19,7 +19,7 @@
           text: "IDE v2",
           action: row => {
             let link = appui.plugins['appui-project'] + '/ui/' + row.id;
-            bbn.fn.log("LINK IS " + link)
+            //bbn.fn.log("LINK IS " + link, row)
             bbn.fn.link(link, this);
           },
           class: 'bbn-primary',

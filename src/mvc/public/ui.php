@@ -7,7 +7,7 @@ use bbn\Str;
 /** @todo temporary hard coded $id_project */
 /** @var array */
 $args = $ctrl->arguments;
-if (count($args)) {
+if (!count($args)) {
   if (!defined('BBN_PROJECT')) {
     throw new Exception(_("Impossible to find the ID project"));
   }
@@ -102,5 +102,6 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
 elseif ($ctrl->hasArguments()) {
   $ctrl->setUrl($ctrl->pluginUrl("appui-project") . "/ui/$id_project")
     ->addData(['id_project' => $id_project])
-    ->combo("Project IDE", true);
+    ->setColor('teal', '#FFF')
+    ->combo($ctrl->inc->options->text($id_project), true);
 }
