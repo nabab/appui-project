@@ -2901,7 +2901,7 @@ class ide {
    */
   public function get_type(string $type){
     if ( !empty($type) ){
-      return self::getAppuiOption($type, self::PATH_TYPE);
+      return self::getOption($type, self::PATH_TYPE);
     }
   }
 
@@ -2912,7 +2912,7 @@ class ide {
    */
   public function get_types(){
     //$this->options->option($this->options->fromCode(self::PATH_TYPE, 'ide', 'project', 'appui'));
-    return self::getAppuiOption(self::PATH_TYPE);
+    return self::getOption(self::PATH_TYPE);
   }
 
   /**
