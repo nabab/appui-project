@@ -2,10 +2,13 @@
 
 use bbn\X;
 use bbn\Str;
-/** @var $ctrl \bbn\Mvc\Controller */
+use bbn\Appui;
+/** @var bbn\Mvc\Controller $ctrl */
+/** @var bbn\Appui\Option $ctrl->inc->options */
+/** @var bbn\User\Permissions $ctrl->inc->permissions */
+/** @var bbn\User\Preferences $ctrl->inc->pref */
 
-/** @todo temporary hard coded $id_project */
-/** @var array */
+/** @var array $args */
 $args = $ctrl->arguments;
 if (!count($args)) {
   if (!defined('BBN_PROJECT')) {
@@ -24,7 +27,7 @@ else {
 // the request is coming straight from the internal router
 if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
   //array_unshift($ctrl->arguments, $id_project);
-  /** @var string ide/database/finder */
+  /** @var string $page */
   $page = array_shift($args);
   if ($page === $id_project) {
     $page = array_shift($args);
@@ -103,5 +106,6 @@ elseif ($ctrl->hasArguments()) {
   $ctrl->setUrl($ctrl->pluginUrl("appui-project") . "/ui/$id_project")
     ->addData(['id_project' => $id_project])
     ->setColor('teal', '#FFF')
+    ->setIcon(Appui::getLogo())
     ->combo($ctrl->inc->options->text($id_project), true);
 }

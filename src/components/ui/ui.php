@@ -32,7 +32,7 @@
                   <ul class="start">
                     <li>
                       <i class="nf nf-fa-image bbn-left-siconblock"></i>
-                      <a :href="root + 'iconology'" v-text="_('Iconology')"></a><br>
+                      <a :href="core + 'iconology'" v-text="_('Iconology')"></a><br>
                       <span><?= _("Access all available fonts for your app") ?></span>
                     </li>
                     <li>
@@ -121,7 +121,11 @@
         </bbn-container>
         <bbn-container url="ide"
                        component="appui-ide-editor"
-                       :source="source"/>
+                       :source="source"
+                       :options="{
+                          storage: true,
+                          storageFullName: 'appui-ide-editor-' + source.project.id
+                       }"/>
         <bbn-container url="database"
                        :scrollable="false">
           <div class="bbn-overlay bbn-flex-height">
