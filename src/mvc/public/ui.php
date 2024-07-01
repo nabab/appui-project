@@ -57,7 +57,7 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
 
     case "database":
       $url .= '/database';
-      /*
+    /*
       if (count($args) > 2) {
         if (!($row = X::getRow($databases, ['code' => $args[2]]))) {
           $ctrl->obj->error = _("The database does not exist");
@@ -83,8 +83,8 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
         ], true);
       }
       $ctrl->setUrl("$url/database".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
-      */
-      $ctrl->setUrl("$url/database");
+    */
+      $ctrl->setUrl($url);
       $ctrl->setTitle(_("Databases"));
       break;
     case "finder":

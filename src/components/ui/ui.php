@@ -1,14 +1,15 @@
 <!-- HTML Document -->
 
 <div class="appui-project-ui bbn-overlay bbn-flex-width">
-  <div class="bbn-padded bbn-h-100 bbn-xxl bbn-bordered-right">
+  <div class="bbn-vpadding bbn-hspadding bbn-h-100 bbn-xxl bbn-bordered-right bbn-background-primary">
     <div class="project_ide-navbar">
       <div bbn-for="(m, i) in menu"
            class="bbn-top-sspace bbn-p">
         <a :href="root + m.url"
            tabindex="0"
-           :title="m.title">
-          <i :class="[m.icon, 'bbn-reactive-text', {'bbn-text-state-selected': i === pageSelected}]"/>
+           :title="m.title"
+           :class="{'bbn-primary': true, 'selected': i === pageSelected}">
+          <i :class="m.icon"/>
         </a>
       </div>
     </div>

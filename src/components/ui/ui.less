@@ -1,6 +1,23 @@
 .appui-project-ui {
 /* LESS Document */
-
+  .project_ide-navbar {
+    text-align: center;
+    a {
+      display: inline-block;
+    }
+    a:before {
+      content: " ";
+    }
+    a.selected:before {
+      content: "[";
+    }
+    a:after {
+      content: " ";
+    }
+    a.selected:after {
+      content: "]";
+    }
+  }
   .appui-project-ui-home {
     color: white;
     .h-container {
