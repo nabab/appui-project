@@ -50,9 +50,11 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
         "url" => X::join($args, '/'),
         "baseURL" => constant('BBN_BASEURL')
       ]);
-      if ($ctrl->obj->url) {
+
+      if (!empty($ctrl->obj->url)) {
         $ctrl->setUrl($url.'/'.($hasFile ? 'file/' : '').$ctrl->obj->url);
       }
+
       break;
 
     case "database":
