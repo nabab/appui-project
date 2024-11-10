@@ -1,5 +1,5 @@
 <?php
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 if ( !$ctrl->inc->user->isDev() ){
   die("You aren't an admin user.");
 }
