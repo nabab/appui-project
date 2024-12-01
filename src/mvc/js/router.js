@@ -31,7 +31,7 @@
     },
     components:{
       'toolbar':{
-        template: `<div class="bbn-padded"><span class="bbn-b bbn-xxl">Projects</span></div>`,
+        template: `<div class="bbn-padding"><span class="bbn-b bbn-xxl">Projects</span></div>`,
       }
     }
   }

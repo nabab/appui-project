@@ -1,4 +1,4 @@
-<div class="bbn-overlay bbn-padded">
+<div class="bbn-overlay bbn-padding">
   <bbn-table ref="table"
              :source="source.data"
              class="bbn-w-100"

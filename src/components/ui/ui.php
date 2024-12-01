@@ -1,7 +1,7 @@
 <!-- HTML Document -->
 
 <div class="appui-project-ui bbn-overlay bbn-flex-width">
-  <div class="bbn-vpadding bbn-hspadding bbn-h-100 bbn-xxl bbn-bordered-right bbn-background-primary">
+  <div class="bbn-vpadding bbn-hspadding bbn-h-100 bbn-xxl bbn-border-right bbn-background-primary">
     <div class="project_ide-navbar">
       <div bbn-for="(m, i) in menu"
            class="bbn-top-sspace bbn-p">
