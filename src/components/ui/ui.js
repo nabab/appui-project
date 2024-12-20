@@ -124,9 +124,6 @@
         appui.projects.list.push({id: this.source.id_project});
       }
     },
-    mounted() {
-      this.route(this.menu[this.pageSelected].url);
-    },
     watch: {
       pageSelected(i) {
         if (this.menu[i]) {
