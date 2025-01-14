@@ -6,7 +6,7 @@
     methods:{
       buttons(row, col, idx){
         return [{
-          text: "IDE v1",
+          label: "IDE v1",
           action: row => {
             let link = appui.plugins['appui-project'] + '/router/' + row.project
                 + '/' + appui.plugins['appui-ide'] + '/editor/';
@@ -16,7 +16,7 @@
           title: bbn._('Go to I.D.E v1') + ' ('+row.project+')',
           notext: true
         }, {
-          text: "IDE v2",
+          label: "IDE v2",
           action: row => {
             let link = appui.plugins['appui-project'] + '/ui/' + row.id;
             //bbn.fn.log("LINK IS " + link, row)
