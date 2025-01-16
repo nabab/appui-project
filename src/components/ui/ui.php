@@ -52,7 +52,7 @@
                       <span><?= _("Access bbn ide logs to debug errors or more") ?></span>
                     </li>
                     <li>
-                      <i class="nf nf-mdi-apple_finder bbn-large bbn-left-siconblock"></i>
+                      <i class="nf nf-md-apple_finder bbn-large bbn-left-siconblock"></i>
                       <a :href="root + 'finder'" v-text="_('Finder')"></a><br>
                       <span><?= _("Access bbn ide file finder") ?></span>
                     </li>
@@ -81,7 +81,7 @@
                   <div class="tool-container bbn-sradius">
                     <a :href="root + 'dns'">
                       <div class="bbn-iblock bbn-space bbn-c bbn-padding dns bbn-radius bbn-white">
-                        <i class="nf nf-mdi-dns"></i>
+                        <i class="nf nf-md-dns"></i>
                         Dns Tool
                       </div>
                     </a>

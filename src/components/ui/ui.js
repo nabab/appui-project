@@ -41,7 +41,7 @@
         }, {
           url: 'finder',
           text: bbn._('Finder'),
-          icon: 'nf nf-mdi-apple_finder',
+          icon: 'nf nf-md-apple_finder',
         }, {
           url: 'libraries',
           text: bbn._('Libraries'),
@@ -49,7 +49,7 @@
         }, {
           url: 'i18n',
           text: bbn._('I18N'),
-          icon: 'nf nf-mdi-translate',
+          icon: 'nf nf-md-translate',
         }
       ];
       bbn.fn.log(["PAGE " + page + ' ROOT ' + path, bits, this.source]);
