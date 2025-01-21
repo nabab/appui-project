@@ -1,0 +1,27 @@
+[
+    {
+        "text": "Dashboard",
+        "code": "dashboard",
+        "items": [
+            {
+                "text": "Widgets",
+                "code": "widgets",
+                "id_alias": [
+                    "widgets",
+                    "dashboard",
+                    "appui"
+                ],
+                "icon": "nf nf-mdi-widgets",
+                "items": [
+                    {
+                        "text": "Projects",
+                        "code": "projects",
+                        "limit": 5,
+                        "closable": true,
+                        "itemComponent": "appui-project-widget-projects"
+                    }
+                ]
+            }
+        ]
+    }
+]
