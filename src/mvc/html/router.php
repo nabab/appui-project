@@ -6,28 +6,30 @@
              :order="[{field: 'project', dir: 'ASC'}]">
     <bbns-column label="<?= _("Project") ?>"
                  field="project"
-                 :sortable="false"/>
+                 :sortable="false"
+                 :min-width="200"/>
 
     <bbns-column label="APP"
                  field="app"
-                 :width="100"
+                 :width="70"
                  cls="bbn-c"/>
   
     <bbns-column label="CDN"
                  field="cdn"
-                 :width="100"
+                 :width="70"
                  cls="bbn-c"/>
     
     <bbns-column label="LIB"
                	 field="lib"
-                  :width="100"
+                  :width="70"
                  cls="bbn-c"/>
 
-    <bbns-column label="<?= _("Total repositories") ?>"
+    <bbns-column label="<?= _("Tot. repo.") ?>"
+                 flabel="<?= _("Total number of repositories") ?>"
                  field="repositories"
-                 :width="200"
+                 :min-width="70"
                  cls="bbn-c"/>
     <bbns-column :buttons="buttons"
-                 :width="130"/>
+                 :width="80"/>
   </bbn-table>
 </div>
