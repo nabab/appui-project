@@ -92,30 +92,6 @@
                 "icon": "nf nf-fa-code_fork",
                 "items": [
                     {
-                        "text": "Data directory",
-                        "code": "data",
-                        "icon": "nf nf-md-folder_account",
-                        "items": [
-                            {
-                                "id_alias": [
-                                    "sandbox",
-                                    "types",
-                                    "options",
-                                    "ide",
-                                    "appui"
-                                ],
-                                "text": "Sandbox",
-                                "code": "sandbox",
-                                "path": "plugins\/appui-ide\/sandbox\/"
-                            }
-                        ],
-                        "cfg": {
-                            "show_code": 1,
-                            "show_alias": 1,
-                            "show_value": 1
-                        }
-                    },
-                    {
                         "text": "Libraries (vendor)",
                         "code": "lib",
                         "icon": "nf nf-custom-folder_config",
@@ -129,34 +105,6 @@
                         "text": "Main application",
                         "code": "app",
                         "icon": "nf nf-md-folder_star",
-                        "items": [
-                            {
-                                "id_alias": [
-                                    "bbn-project",
-                                    "types",
-                                    "options",
-                                    "ide",
-                                    "appui"
-                                ],
-                                "text": "main",
-                                "code": "main",
-                                "path": "\/",
-                                "bcolor": "#0c1b71",
-                                "fcolor": "#fdfdfd",
-                                "default": true,
-                                "language": "en"
-                            }
-                        ],
-                        "cfg": {
-                            "show_code": 1,
-                            "show_alias": 1,
-                            "show_value": 1
-                        }
-                    },
-                    {
-                        "text": "Static directory",
-                        "code": "cdn",
-                        "icon": "nf nf-custom-folder_npm",
                         "cfg": {
                             "show_code": 1,
                             "show_alias": 1,
