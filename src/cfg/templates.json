@@ -92,6 +92,16 @@
                 "icon": "nf nf-fa-code_fork",
                 "items": [
                     {
+                        "text": "Data directory",
+                        "code": "data",
+                        "icon": "nf nf-md-folder_account",
+                        "cfg": {
+                            "show_code": 1,
+                            "show_alias": 1,
+                            "show_value": 1
+                        }
+                    },
+                    {
                         "text": "Libraries (vendor)",
                         "code": "lib",
                         "icon": "nf nf-custom-folder_config",
@@ -105,6 +115,16 @@
                         "text": "Main application",
                         "code": "app",
                         "icon": "nf nf-md-folder_star",
+                        "cfg": {
+                            "show_code": 1,
+                            "show_alias": 1,
+                            "show_value": 1
+                        }
+                    },
+                    {
+                        "text": "Static directory",
+                        "code": "cdn",
+                        "icon": "nf nf-custom-folder_npm",
                         "cfg": {
                             "show_code": 1,
                             "show_alias": 1,
