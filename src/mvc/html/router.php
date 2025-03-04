@@ -7,29 +7,29 @@
     <bbns-column label="<?= _("Project") ?>"
                  field="project"
                  :sortable="false"
-                 :min-width="200"/>
+                 min-width="15rem"/>
 
     <bbns-column label="APP"
                  field="app"
-                 :width="70"
+                 width="4rem"
                  cls="bbn-c"/>
   
     <bbns-column label="CDN"
                  field="cdn"
-                 :width="70"
+                 width="4rem"
                  cls="bbn-c"/>
     
     <bbns-column label="LIB"
                	 field="lib"
-                  :width="70"
+                 width="4rem"
                  cls="bbn-c"/>
 
     <bbns-column label="<?= _("Tot. repo.") ?>"
                  flabel="<?= _("Total number of repositories") ?>"
                  field="repositories"
-                 :min-width="70"
+                 width="8rem"
                  cls="bbn-c"/>
     <bbns-column :buttons="buttons"
-                 :width="80"/>
+                 width="6rem"/>
   </bbn-table>
 </div>
