@@ -71,6 +71,7 @@
         pageSelected,
         databaseDb,
         databaseHost,
+        recentFiles: []
       };
     },
     computed: {
@@ -94,6 +95,7 @@
       onRoute(url) {
         const bits = url.split('/');
         this.pageSelected = bbn.fn.search(this.menu, {url: bits[0]});
+        bbn.fn.log("PAGE SELECTED: " + this.pageSelected, bits)
       },
       /**
   			* Set the router with the container take in parameter
@@ -123,6 +125,22 @@
       else {
         appui.projects.list.push({id: this.source.id_project});
       }
+      bbn.fn.post(appui.plugins['appui-ide'] + '/data/recent/files', d => {
+        if (d.success) {
+          this.recentFiles = d.data.map(a => {
+            const bits = a.file.split('/_end_/');
+            a.name = bits[0];
+            a.ext = bits[1];
+            if (a.type === 'components') {
+              const tmp = a.name.split('/');
+              tmp.splice(-1);
+              a.name = tmp.join('/');
+            }
+
+            return a;
+          });
+        }
+      })
     },
     watch: {
       pageSelected(i) {
