@@ -135,8 +135,8 @@
         <bbn-container url="database"
                        :scrollable="false">
           <div class="bbn-overlay bbn-flex-height">
-            <bbn-toolbar>
-              <div>
+            <bbn-toolbar class="bbn-lg">
+              <div class="bbn-hspadding">
                 <bbn-dropdown :source="source.project.db.items"
                               v-model="databaseDb"
                               source-value="code"
@@ -149,9 +149,29 @@
               </div>
             </bbn-toolbar>
             <div class="bbn-flex-fill">
-              <bbn-router :autoload="true"
+              <bbn-router bbn-if="databaseHost && (databaseHost === databaseHostCopy)"
                           ref="dbRouter"
-                          :nav="false">
+                          :nav="true"
+                          :url-navigation="true"
+                          :autoload="true">
+                <bbns-container :fixed="true"
+                                :url="databaseHost + '/' + databaseDb + '/home'"
+                                icon="nf nf-fa-home"
+                                :notext="true"
+                                label="<?= _("Liste des tables") ?>"
+                                :load="true"/>
+                <bbns-container :fixed="true"
+                                :url="databaseHost + '/' + databaseDb + '/console'"
+                                icon="nf nf-md-console_line"
+                                :notext="true"
+                                label="<?= _("Console") ?>"
+                                :load="true"/>
+              </bbn-router>
+              <div bbn-else class="bbn-overlay bbn-middle">
+                <div class="bbn-radius bbn-lg bbn-bordered bbn-lpadding">
+                  <?= _("Select a database and a connection first") ?>
+                </div>
+              </div>
             </div>
           </div>
         </bbn-container>

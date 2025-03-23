@@ -87,7 +87,7 @@
                 }
             },
             {
-                "text": "path",
+                "text": "Path",
                 "code": "path",
                 "icon": "nf nf-fa-code_fork",
                 "items": [
@@ -137,6 +137,21 @@
                     "show_alias": 1,
                     "show_value": 1
                 }
+            },
+            {
+                "text": "Database",
+                "code": "db",
+                "icon": "nf nf-fa-file_code_o",
+                "items": [
+                    {
+                        "text": "List",
+                        "code": "list",
+                        "cfg": {
+                            "show_code": 1,
+                            "allow_children": 1
+                        }
+                    }
+                ]
             }
         ],
         "cfg": {

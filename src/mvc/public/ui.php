@@ -59,6 +59,36 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
 
     case "database":
       $url .= '/database';
+      $engine = 'mysql';
+      if (!isset($ctrl->inc->dbc)) {
+        $ctrl->addInc('dbc', new bbn\Appui\Database($ctrl->db));
+      }
+
+      if (count($args) > 3) {
+        if ($args[3] === 'home') {
+          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/tabs/table/'.$engine.'/'.$args[0].'/'.$args[1].'/'.$args[2], [], true);
+        }
+
+        $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]/$args[3]");
+      }
+      elseif (count($args) > 2) {
+        if ($args[2] === 'home') {
+          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/tabs/db/'.$engine.'/'.$args[0].'/'.$args[1], [], true);
+        }
+        elseif ($args[2] === 'console') {
+          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/console', [
+            'engine' => $engine,
+            'connection' => $args[0],
+            'database' => $args[1]
+          ], true);
+        }
+
+        $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]");
+      }
+      else {
+        $ctrl->setUrl($url);
+        $ctrl->setTitle(_("Databases"));
+      }
     /*
       if (count($args) > 2) {
         if (!($row = X::getRow($databases, ['code' => $args[2]]))) {
@@ -86,8 +116,6 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
       }
       $ctrl->setUrl("$url/database".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));
     */
-      $ctrl->setUrl($url);
-      $ctrl->setTitle(_("Databases"));
       break;
     case "finder":
       $ctrl->addToObj($ctrl->pluginUrl("appui-ide")."/finder".(empty($ctrl->arguments) ? "" : "/".X::join($ctrl->arguments, "/")));

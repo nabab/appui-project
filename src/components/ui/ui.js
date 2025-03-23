@@ -71,6 +71,7 @@
         pageSelected,
         databaseDb,
         databaseHost,
+        databaseHostCopy: databaseHost,
         recentFiles: []
       };
     },
@@ -152,6 +153,15 @@
         if (this.databaseDb && this.databaseHost) {
           this.getRef('dbRouter').route('database/' + this.databaseDb + '/' + this.databaseHost + '');
         }
+      },
+      databaseHost(v) {
+        if (this.databaseHostTimeout) {
+          clearTimeout(this.databaseHostTimeout);
+        }
+
+        this.databaseHostTimeout = setTimeout(() => {
+          this.databaseHostCopy = this.databaseHost;
+        }, 1000);
       }
     }
   };
