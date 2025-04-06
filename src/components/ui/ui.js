@@ -56,10 +56,17 @@
       let pageSelected = page ? bbn.fn.search(menu, {url: page}) || 0 : 0;
       let databaseDb = '';
       let databaseHost = '';
-      if (page && (bits[1] === 'database') && bits.length > 2) {
+      if ((page === 'database') && (bits.length > 2)) {
         databaseDb = bits[2];
-        if (bits[3]) {
-          databaseHost = bits[3];
+        databaseHost = bits[1];
+      }
+      else if (this.source.project.db?.items?.length === 1) {
+        databaseDb = this.source.project.db.items[0].code;
+        if (this.source.project.db.items[0].items?.length) {
+          const row = bbn.fn.getRow(this.source.project.db.items[0].items, {default: true});
+          if (row) {
+            databaseHost = row.code;
+          }
         }
       }
 
