@@ -10,7 +10,7 @@
                 "icon": "nf nf-fa-envira",
                 "cfg": {
                     "show_code": 1,
-                    "show_alias": 1,
+                    "relations": "alias",
                     "show_icon": 1,
                     "allow_children": 1,
                     "alias_name": "Host",
@@ -83,7 +83,7 @@
                 ],
                 "cfg": {
                     "show_code": 1,
-                    "show_alias": 1
+                    "relations": "alias"
                 }
             },
             {
@@ -97,7 +97,7 @@
                         "icon": "nf nf-md-folder_account",
                         "cfg": {
                             "show_code": 1,
-                            "show_alias": 1,
+                            "relations": "alias",
                             "show_value": 1
                         }
                     },
@@ -107,7 +107,7 @@
                         "icon": "nf nf-custom-folder_config",
                         "cfg": {
                             "show_code": 1,
-                            "show_alias": 1,
+                            "relations": "alias",
                             "show_value": 1
                         }
                     },
@@ -117,7 +117,7 @@
                         "icon": "nf nf-md-folder_star",
                         "cfg": {
                             "show_code": 1,
-                            "show_alias": 1,
+                            "relations": "alias",
                             "show_value": 1
                         }
                     },
@@ -127,14 +127,14 @@
                         "icon": "nf nf-custom-folder_npm",
                         "cfg": {
                             "show_code": 1,
-                            "show_alias": 1,
+                            "relations": "alias",
                             "show_value": 1
                         }
                     }
                 ],
                 "cfg": {
                     "show_code": 1,
-                    "show_alias": 1,
+                    "relations": "alias",
                     "show_value": 1
                 }
             },
@@ -156,7 +156,7 @@
         ],
         "cfg": {
             "show_code": 1,
-            "show_alias": 1,
+            "relations": "alias",
             "show_value": 1,
             "i18n": "en"
         }
