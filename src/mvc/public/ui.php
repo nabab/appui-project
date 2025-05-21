@@ -128,6 +128,18 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
         ->setTitle(_("Home"))
         ->setIcon('nf nf-fa-home');
       break;
+    case 'i18n':
+      $ctrl->addToObj($ctrl->pluginUrl('appui-i18n') . "/page" . $full_url, [
+        "arguments" => $args,
+        "id_project" => $id_project,
+        "url" => X::join($args, '/'),
+        "baseURL" => constant('BBN_BASEURL')
+      ]);
+      if (!empty($ctrl->obj->url)) {
+        $ctrl->setUrl('i18n/'.$ctrl->obj->url);
+      }
+
+      break;
 
   }
 }

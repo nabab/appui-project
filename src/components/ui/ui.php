@@ -178,11 +178,11 @@
         <bbn-container url="libraries">
           <h1>Hello libraries!</h1>
         </bbn-container>
-        <bbn-container url="i18n">
-          <div class="bbn-overlay bbn-middle bbn-c">
-            <h1>Hello Internationalization!</h1>
-          </div>
-        </bbn-container>
+        <bbn-container url="i18n"
+                       component="appui-i18n-main"
+                       :options="{
+                          project: source.project.id
+                       }"/>
       </bbn-router>
     </div>
   </div>
