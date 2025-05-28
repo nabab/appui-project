@@ -1,13 +1,3 @@
-/**
-  * @file project2 component
-  *
-  * @description Component use to initiate project data
-  *
-  * @copyright BBN Solutions
-  *
-  * @author Lucas Courteaud
-  */
-
 (() => {
   return {
     props: {
