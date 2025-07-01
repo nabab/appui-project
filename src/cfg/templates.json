@@ -1,164 +1,178 @@
-[
-    {
-        "text": "Project",
-        "code": "project",
-        "icon": "nf nf-fa-server",
-        "items": [
-            {
-                "text": "Environments",
-                "code": "env",
-                "icon": "nf nf-fa-envira",
-                "cfg": {
-                    "show_code": 1,
-                    "relations": "alias",
-                    "show_icon": 1,
-                    "allow_children": 1,
-                    "alias_name": "Host",
-                    "schema": [
-                        {
-                            "title": "Path",
-                            "field": "text",
-                            "type": "string",
-                            "required": true,
-                            "editable": true,
-                            "showable": true
-                        },
-                        {
-                            "title": "URL",
-                            "field": "code",
-                            "type": "string",
-                            "options": [],
-                            "required": true,
-                            "hidden": false,
-                            "editable": true,
-                            "showable": true
-                        },
-                        {
-                            "title": "Environment type",
-                            "field": "type",
-                            "showable": true,
-                            "editable": true,
-                            "required": true,
-                            "type": "",
-                            "hidden": false,
-                            "source": [
-                                {
-                                    "text": "Development",
-                                    "value": "dev"
-                                },
-                                {
-                                    "text": "Test",
-                                    "value": "test"
-                                },
-                                {
-                                    "text": "Production",
-                                    "value": "prod"
-                                }
-                            ]
-                        }
-                    ],
-                    "id_root_alias": [
-                        "servers",
-                        "options",
-                        "server",
-                        "appui"
-                    ]
-                }
-            },
-            {
-                "text": "Languages",
-                "code": "lang",
-                "items": [
+{
+    "text": "Project",
+    "code": "project",
+    "icon": "nf nf-seti-project",
+    "items": [
+        {
+            "text": "Database",
+            "code": "db",
+            "root": "options\/",
+            "icon": "nf nf-md-database",
+            "cfg": {
+                "relations": "alias",
+                "id_root_alias": [
+                    "engines",
+                    "options",
+                    "database",
+                    "appui",
+                    "plugins"
+                ],
+                "notext": 1
+            }
+        },
+        {
+            "text": "Environments",
+            "code": "env",
+            "icon": "nf nf-fa-envira",
+            "cfg": {
+                "show_code": 1,
+                "relations": "alias",
+                "show_icon": 1,
+                "alias_name": "Host",
+                "schema": [
                     {
-                        "id_alias": [
-                            "en",
-                            "languages",
-                            "options",
-                            "i18n",
-                            "appui"
+                        "title": "Environment type",
+                        "field": "type",
+                        "showable": true,
+                        "editable": true,
+                        "required": true,
+                        "type": "string",
+                        "hidden": false,
+                        "source": [
+                            {
+                                "text": "Development",
+                                "value": "dev"
+                            },
+                            {
+                                "text": "Test",
+                                "value": "test"
+                            },
+                            {
+                                "text": "Production",
+                                "value": "prod"
+                            }
                         ],
-                        "text": "English",
-                        "code": "en"
+                        "label": "Type",
+                        "componentOptions": [],
+                        "editorOptions": []
                     }
                 ],
-                "cfg": {
-                    "show_code": 1,
-                    "relations": "alias"
-                }
-            },
-            {
-                "text": "Path",
-                "code": "path",
-                "icon": "nf nf-fa-code_fork",
-                "items": [
-                    {
-                        "text": "Data directory",
-                        "code": "data",
-                        "icon": "nf nf-md-folder_account",
-                        "cfg": {
-                            "show_code": 1,
-                            "relations": "alias",
-                            "show_value": 1
-                        }
-                    },
-                    {
-                        "text": "Libraries (vendor)",
-                        "code": "lib",
-                        "icon": "nf nf-custom-folder_config",
-                        "cfg": {
-                            "show_code": 1,
-                            "relations": "alias",
-                            "show_value": 1
-                        }
-                    },
-                    {
-                        "text": "Main application",
-                        "code": "app",
-                        "icon": "nf nf-md-folder_star",
-                        "cfg": {
-                            "show_code": 1,
-                            "relations": "alias",
-                            "show_value": 1
-                        }
-                    },
-                    {
-                        "text": "Static directory",
-                        "code": "cdn",
-                        "icon": "nf nf-custom-folder_npm",
-                        "cfg": {
-                            "show_code": 1,
-                            "relations": "alias",
-                            "show_value": 1
-                        }
-                    }
-                ],
-                "cfg": {
-                    "show_code": 1,
-                    "relations": "alias",
-                    "show_value": 1
-                }
-            },
-            {
-                "text": "Database",
-                "code": "db",
-                "icon": "nf nf-fa-file_code_o",
-                "items": [
-                    {
-                        "text": "List",
-                        "code": "list",
-                        "cfg": {
-                            "show_code": 1,
-                            "allow_children": 1
-                        }
-                    }
+                "id_root_alias": [
+                    "servers",
+                    "options",
+                    "server",
+                    "appui",
+                    "plugins"
                 ]
             }
-        ],
-        "cfg": {
-            "show_code": 1,
-            "relations": "alias",
-            "show_value": 1,
-            "i18n": "en"
+        },
+        {
+            "text": "Languages",
+            "code": "lang",
+            "icon": "nf nf-md-google_translate",
+            "cfg": {
+                "relations": "alias",
+                "id_root_alias": [
+                    "languages",
+                    "options",
+                    "i18n",
+                    "appui",
+                    "plugins"
+                ],
+                "alias_name": "Language",
+                "notext": 1
+            }
+        },
+        {
+            "text": "Path",
+            "code": "path",
+            "icon": "nf nf-fa-code_fork",
+            "items": [
+                {
+                    "text": "Data directory",
+                    "code": "data",
+                    "icon": "nf nf-md-folder_account"
+                },
+                {
+                    "text": "Libraries (vendor)",
+                    "code": "lib",
+                    "icon": "nf nf-custom-folder_config"
+                },
+                {
+                    "text": "Main application",
+                    "code": "app",
+                    "icon": "nf nf-md-folder_star"
+                },
+                {
+                    "text": "Static directory",
+                    "code": "cdn",
+                    "icon": "nf nf-custom-folder_npm"
+                }
+            ],
+            "cfg": {
+                "show_code": 1,
+                "relations": "alias",
+                "show_icon": 1,
+                "allow_children": 1,
+                "scfg": {
+                    "allow_children": null,
+                    "alias_name": "Path type",
+                    "categories": null,
+                    "controller": null,
+                    "default": "",
+                    "default_value": null,
+                    "desc": "",
+                    "form": null,
+                    "id": "",
+                    "inheritance": "",
+                    "permissions": "",
+                    "schema": [
+                        {
+                            "label": "Path",
+                            "field": "path",
+                            "type": "string",
+                            "componentOptions": [],
+                            "editorOptions": [],
+                            "editable": true,
+                            "required": true
+                        }
+                    ],
+                    "relations": "alias",
+                    "template": null,
+                    "show_code": 1,
+                    "show_icon": 0,
+                    "show_value": false,
+                    "sortable": null,
+                    "help": "",
+                    "notext": 0,
+                    "view": 0,
+                    "id_root_alias": [
+                        "types",
+                        "options",
+                        "ide",
+                        "appui",
+                        "plugins"
+                    ]
+                }
+            }
         }
+    ],
+    "cfg": {
+        "show_code": 1,
+        "i18n": "en",
+        "show_icon": 1,
+        "allow_children": 1,
+        "schema": [
+            {
+                "label": "Color",
+                "field": "color",
+                "type": "color",
+                "componentOptions": [],
+                "editorOptions": [],
+                "editable": true,
+                "nullable": null,
+                "width": 100
+            }
+        ]
     }
-]
+}
