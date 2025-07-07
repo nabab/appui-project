@@ -17,7 +17,8 @@
                     "appui",
                     "plugins"
                 ],
-                "notext": 1
+                "notext": 1,
+                "allow_children": 1
             }
         },
         {
@@ -29,6 +30,7 @@
                 "relations": "alias",
                 "show_icon": 1,
                 "alias_name": "Host",
+                "allow_children": 1,
                 "schema": [
                     {
                         "title": "Environment type",
@@ -80,7 +82,8 @@
                     "plugins"
                 ],
                 "alias_name": "Language",
-                "notext": 1
+                "notext": 1,
+                "allow_children": 1
             }
         },
         {
