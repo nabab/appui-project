@@ -1,8 +1,13 @@
 [
     {
         "cfg": {
-            "show_code": 1,
-            "allow_children": 1
+            "id_template": [
+              "project",
+              "templates",
+              "project",
+              "appui",
+              "plugins"
+            ]
         },
         "text": "List",
         "code": "list"
