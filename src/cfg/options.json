@@ -1,6 +1,7 @@
 [
     {
         "cfg": {
+            "relations": "template",
             "id_template": [
               "project",
               "templates",
