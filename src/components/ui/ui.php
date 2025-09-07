@@ -151,6 +151,8 @@
                           ref="dbRouter"
                           :nav="true"
                           :url-navigation="true"
+                          :storage="true"
+                          :storage-full-name="'appui-ui-project-database-router-' + source.project.id"
                           :autoload="true">
                 <bbns-container :fixed="true"
                                 :url="databaseHost + '/' + databaseDb + '/home'"
