@@ -82,6 +82,9 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
             'database' => $args[1]
           ], true);
         }
+        elseif ($args[2] === 'queries') {
+          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/queries/' . $engine, [], true);
+        }
 
         $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]");
       }

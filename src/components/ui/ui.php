@@ -166,6 +166,12 @@
                                 :notext="true"
                                 label="<?= _("Console") ?>"
                                 :load="true"/>
+                <bbns-container :fixed="true"
+                                :url="databaseHost + '/' + databaseDb + '/queries/' + source.engine"
+                                icon="nf nf-dev-azuresqldatabase"
+                                :notext="true"
+                                label="<?= _("Stored queries") ?>"
+                                :load="true"/>
               </bbn-router>
               <div bbn-else class="bbn-overlay bbn-middle">
                 <div class="bbn-radius bbn-lg bbn-bordered bbn-lpadding">
