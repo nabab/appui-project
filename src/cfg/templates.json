@@ -75,7 +75,7 @@
             "cfg": {
                 "relations": "alias",
                 "id_root_alias": [
-                    "languages",
+                    "langs",
                     "options",
                     "i18n",
                     "appui",
