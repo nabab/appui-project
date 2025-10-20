@@ -149,7 +149,7 @@
             <div class="bbn-flex-fill">
               <bbn-router bbn-if="databaseHost && (databaseHost === databaseHostCopy)"
                           ref="dbRouter"
-                          :nav="true"
+                          mode="tabs"
                           :url-navigation="true"
                           :storage="true"
                           :storage-full-name="'appui-ui-project-database-router-' + source.project.id"
