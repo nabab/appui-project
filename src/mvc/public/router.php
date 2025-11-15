@@ -1,5 +1,6 @@
 <?php
 use bbn\X;
+use bbn\Str;
 
 $list = [];
 if (empty($ctrl->arguments) || ($ctrl->arguments[0] === 'list')) {
@@ -21,13 +22,13 @@ if (empty($ctrl->arguments) || ($ctrl->arguments[0] === 'list')) {
 }
 elseif ($ctrl->hasArguments(2)
     && ($ide = $ctrl->pluginUrl('appui-ide'))
-    && (strpos(X::join(array_slice($ctrl->arguments, 1), '/'), $ide) === 0)
+    && (Str::pos(X::join(array_slice($ctrl->arguments, 1), '/'), $ide) === 0)
 ) {
   $current = $ctrl->pluginUrl('appui-project');
   $args    = $ctrl->arguments;
   $project = array_shift($args);
   // We remove the plugin from args
-  $args = X::split(substr(X::join($args, '/'), strlen($ide) + 1), '/');
+  $args = X::split(Str::sub(X::join($args, '/'), Str::len($ide) + 1), '/');
   $ctrl->addInc(
     'ide', new bbn\Appui\Ide(
       $ctrl->db,
