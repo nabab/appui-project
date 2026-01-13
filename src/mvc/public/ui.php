@@ -4,9 +4,6 @@ use bbn\X;
 use bbn\Str;
 use bbn\Appui;
 /** @var bbn\Mvc\Controller $ctrl */
-/** @var bbn\Appui\Option $ctrl->inc->options */
-/** @var bbn\User\Permissions $ctrl->inc->permissions */
-/** @var bbn\User\Preferences $ctrl->inc->pref */
 
 /** @var array $args */
 $args = $ctrl->arguments;
@@ -64,18 +61,8 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
         $ctrl->addInc('dbc', new bbn\Appui\Database($ctrl->db));
       }
 
-      if (count($args) > 3) {
-        if ($args[3] === 'home') {
-          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/tabs/table/'.$engine.'/'.$args[0].'/'.$args[1].'/'.$args[2], [], true);
-        }
-
-        $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]/$args[3]");
-      }
-      elseif (count($args) > 2) {
-        if ($args[2] === 'home') {
-          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/tabs/db/'.$engine.'/'.$args[0].'/'.$args[1], [], true);
-        }
-        elseif ($args[2] === 'console') {
+      if (count($args) > 2) {
+        if ($args[2] === 'console') {
           $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/console', [
             'engine' => $engine,
             'connection' => $args[0],
@@ -84,9 +71,18 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
         }
         elseif ($args[2] === 'queries') {
           $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/queries/' . $engine, [], true);
+          $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]");
+        }
+        elseif ($args[2] === 'table') {
+          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/tabs/table/'.$engine.'/'.$args[0].'/'.$args[1].'/'.$args[3], [], true);
+          $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]/$args[3]");
+        }
+        else {
+          $ctrl->addToObj($ctrl->pluginUrl('appui-database').'/tabs/db/'.$engine.'/'.$args[0].'/'.$args[1], [], true);
+          $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]");
         }
 
-        $ctrl->setUrl("$url/$args[0]/$args[1]/$args[2]");
+
       }
       else {
         $ctrl->setUrl($url);

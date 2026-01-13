@@ -152,11 +152,11 @@
                           mode="tabs"
                           :url-navigation="true"
                           :storage="true"
-                          :storage-full-name="'appui-ui-project-database-router-' + source.project.id"
+                          :storage-full-name="'appui-project-ui-database-router-' + source.project.id"
                           :autoload="true">
                 <bbns-container :fixed="true"
-                                :url="databaseHost + '/' + databaseDb + '/home'"
-                                icon="nf nf-fa-home"
+                                :url="databaseHost + '/' + databaseDb + '/list'"
+                                icon="nf nf-fa-list_alt"
                                 :notext="true"
                                 label="<?= _("Liste des tables") ?>"
                                 :load="true"/>
