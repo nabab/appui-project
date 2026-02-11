@@ -42,7 +42,7 @@ elseif ($ctrl->hasArguments(2)
   //die(var_dump(X::join($args, '/')));
 
 
-  if (defined('BBN_BASEURL') && !empty(BBN_BASEURL)) {
+  if (defined('BBN_BASEURL') && !empty(constant('BBN_BASEURL'))) {
     if (end($args) === 'content') {
       //array_unshift($args, 'editor');
     }
