@@ -2,6 +2,7 @@
 use bbn\X;
 use bbn\Str;
 
+/** @var bbn\Mvc\Controller $ctrl */
 $list = [];
 if (empty($ctrl->arguments) || ($ctrl->arguments[0] === 'list')) {
     // We define ide array in session
@@ -42,7 +43,7 @@ elseif ($ctrl->hasArguments(2)
   //die(var_dump(X::join($args, '/')));
 
 
-  if (defined('BBN_BASEURL') && !empty(constant('BBN_BASEURL'))) {
+  if ($ctrl->getConstant('baseURL')) {
     if (end($args) === 'content') {
       //array_unshift($args, 'editor');
     }

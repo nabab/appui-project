@@ -22,7 +22,7 @@ else {
 }
 
 // the request is coming straight from the internal router
-if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
+if (count($args) && $ctrl->getConstant('baseURL')) {
   //array_unshift($ctrl->arguments, $id_project);
   /** @var string $page */
   $page = array_shift($args);
@@ -45,7 +45,7 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
         "arguments" => $args,
         "id_project" => $id_project,
         "url" => X::join($args, '/'),
-        "baseURL" => constant('BBN_BASEURL')
+        "baseURL" => $ctrl->getConstant('baseURL')
       ]);
 
       if (!empty($ctrl->obj->url)) {
@@ -101,7 +101,7 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
             "engine" => $args[0],
             "host" => $args[1],
             "db" => $args[2],
-            "baseURL" => constant('BBN_BASEURL')
+            "baseURL" => $ctrl->getConstant('baseURL')
           ]);
     
         }
@@ -132,7 +132,7 @@ if (count($args) && defined('BBN_BASEURL') && constant('BBN_BASEURL')) {
         "arguments" => $args,
         "id_project" => $id_project,
         "url" => X::join($args, '/'),
-        "baseURL" => constant('BBN_BASEURL')
+        "baseURL" => $ctrl->getConstant('baseURL')
       ]);
       if (!empty($ctrl->obj->url)) {
         $ctrl->setUrl('i18n/'.$ctrl->obj->url);
