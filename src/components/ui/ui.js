@@ -42,7 +42,7 @@
           icon: 'nf nf-md-translate',
         }
       ];
-      bbn.fn.log(["PAGE " + page + ' ROOT ' + path, bits, this.source]);
+      //bbn.fn.log(["PAGE " + page + ' ROOT ' + path, bits, this.source]);
       let pageSelected = page ? bbn.fn.search(menu, {url: page}) || 0 : 0;
       let databaseDb = '';
       let databaseHost = '';
@@ -93,7 +93,7 @@
       onRoute(url) {
         const bits = url.split('/');
         this.pageSelected = bbn.fn.search(this.menu, {url: bits[0]});
-        bbn.fn.log("PAGE SELECTED: " + this.pageSelected, bits)
+        //bbn.fn.log("PAGE SELECTED: " + this.pageSelected, bits)
       },
       /**
   			* Set the router with the container take in parameter
